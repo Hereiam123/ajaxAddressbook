@@ -7,6 +7,8 @@ require_once('config/config.php');
 require_once('helpers/system_helper.php');
 
 //autoloader
-function spl_autoload_register($class_name){
-    require_once('libraries/'.$class_name.'php');
-}
+spl_autoload_register(function($class_name){
+    require_once('libraries/'.$class_name.'.php');
+});
+
+?>
