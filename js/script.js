@@ -14,7 +14,7 @@ $(document).ready(function(){
         $.post("add_contact.php", $(this).serialize())
             .done(function(data){
                 console.log(data);
-                $('#addModal').foundation('reveal','close');
+                $('#addModal').foundation('close');
                 showContacts();
             });
         return false;

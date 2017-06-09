@@ -15,39 +15,39 @@
             <h1>Ajax Address Book</h1>
         </div>
         <div class="large-6 small-3 columns">
-            <p><a data-open="exampleModal1" class="button small float-right">Add Contact</a></p>
-            <div class="reveal" id="exampleModal1" data-reveal>
+            <p><a data-open="addModal" class="button small float-right">Add Contact</a></p>
+            <div class="reveal" id="addModal" data-reveal>
                 <h2>Add Contact</h2>
-                <form>
+                <form id="addContact" action="#" method="post">
                     <div class="row">
                         <div class="large-6 columns">
                             <label>First Name
-                                <input type="text" placeholder="Enter First Name" />
+                                <input type="text" name="first_name" placeholder="Enter First Name" />
                             </label>
                         </div>
                         <div class="large-6 columns">
                             <label>Last Name
-                                <input type="text" placeholder="Enter Last Name" />
+                                <input type="text" name="last_name" placeholder="Enter Last Name" />
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-4 columns">
                             <label>Email
-                                <input type="email" placeholder="Enter Email Address" />
+                                <input type="email" name="email" placeholder="Enter Email Address" />
                             </label>
                         </div>
                         <div class="large-4 columns">
                             <label>Phone Number
-                                <input type="text" placeholder="Enter Phone Number" />
+                                <input type="text" name="phone" placeholder="Enter Phone Number" />
                             </label>
                         </div>
                         <div class="large-4 columns">
                             <label>Contact Group
-                                <select>
-                                    <option value="husker">Family</option>
-                                    <option value="starbuck">Friends</option>
-                                    <option value="hotdog">Business</option>
+                                <select name="contact_group">
+                                    <option value="Family">Family</option>
+                                    <option value="Friends">Friends</option>
+                                    <option value="Business">Business</option>
                                 </select>
                             </label>
                         </div>
@@ -55,24 +55,24 @@
                     <div class="row">
                         <div class="large-6 columns">
                             <label>Address 1
-                                <input type="text" placeholder="Enter Address 1" />
+                                <input type="text" name="address1" placeholder="Enter Address 1" />
                             </label>
                         </div>
                         <div class="large-6 columns">
                             <label>Address 2
-                                <input type="text" placeholder="Enter Address 2" />
+                                <input type="text" name="address2" placeholder="Enter Address 2" />
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-4 columns">
                             <label>City
-                                <input type="email" placeholder="Enter Email Address" />
+                                <input type="text" name="city" placeholder="Enter City" />
                             </label>
                         </div>
                         <div class="large-4 columns">
                             <label>State
-                                <select>
+                                <select name="state">
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AZ">Arizona</option>
@@ -128,18 +128,18 @@
                         </div>
                         <div class="large-4 columns">
                             <label>Zipcode
-                                <input type="text" placeholder="Enter Phone Number" />
+                                <input type="text" name="zipcode" placeholder="Enter zipcode" />
                             </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-12 columns">
                             <label>Notes
-                                <textarea placeholder="Enter Optional Notes"></textarea>
+                                <textarea name="notes" placeholder="Enter Optional Notes"></textarea>
                             </label>
                         </div>
                     </div>
-                    <input type="submit" class="add-btn button right small" value="Submit">
+                    <input type="submit" name="submit" class="add-btn button right small" value="Submit">
                 </form>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
