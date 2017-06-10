@@ -16,8 +16,8 @@
             <h1>Ajax Address Book</h1>
         </div>
         <div class="large-6 small-3 columns">
-            <p><a data-open="addModal" class="button small float-right">Add Contact</a></p>
-            <div class="reveal" id="addModal" data-reveal>
+            <p><a data-open="addModal" data-contact-id="<?php echo $contact->id; ?>" class="button small float-right">Add Contact</a></p>
+            <div class="reveal" data-cid="<?php echo $contact->id; ?>" id="addModal" data-reveal>
                 <h2>Add Contact</h2>
                 <form id="addContact" action="#" method="post">
                     <div class="row">
@@ -74,7 +74,7 @@
                         <div class="large-4 columns">
                             <label>State
                                 <select name="state">
-                                   <option>Select State</option>
+                                   <option disabled selected>Select State</option>
                                    <?php foreach($states as $key=>$value): ?>
                                        <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                    <?php endforeach; ?>
@@ -114,12 +114,10 @@
 
     </div>
 
-
     <script src="js/vendor/jquery.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
 

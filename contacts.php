@@ -35,7 +35,7 @@ $contacts=$db->resultset();
                             <ul>
                                 <li><?php echo $contact->address1; ?></li>
                                 <li><?php if($contact->address2) echo $contact->address2; ?></li>
-                                <li><?php echo $contact->city; ?>,<?php echo $contact->state; ?>,<?php echo $contact->address1; ?></li>
+                                <li><?php echo $contact->city; ?>,<?php echo $contact->state; ?>,<?php echo $contact->zipcode; ?></li>
                             </ul>
                         </td>
                         <td><?php echo $contact->contact_group; ?></td>
@@ -43,7 +43,7 @@ $contacts=$db->resultset();
                             <ul class="button-group expanded">
                                 <li>
                                     <p><a data-open="editModal<?php echo $contact->id;?>" class="button tiny">Edit</a></p>
-                                    <div class="reveal" id="editModal<?php echo $contact->id; ?>" data-reveal>
+                                    <div class="reveal editModal" id="editModal<?php echo $contact->id; ?>" data-reveal>
                                         <h2>Edit Contact</h2>
                                         <form id="editContact" action="#" method="post">
                                             <div class="row">
@@ -100,7 +100,7 @@ $contacts=$db->resultset();
                                                 <div class="large-4 columns">
                                                     <label>State
                                                         <select name="state">
-                                                            <option>Select State</option>
+                                                            <option disabled selected>Select State</option>
                                                             <?php foreach($states as $key=>$value): ?>
                                                                 <option value="<?php echo $key;?>" <?php if($contact->state==$value){echo 'selected';}?>><?php echo $value; ?></option>
                                                             <?php endforeach; ?>
@@ -116,10 +116,11 @@ $contacts=$db->resultset();
                                             <div class="row">
                                                 <div class="large-12 columns">
                                                     <label>Notes
-                                                        <textarea name="notes" placeholder="Enter Optional Notes"  value="<?php echo $contact->notes;?>"></textarea>
+                                                        <textarea name="notes" placeholder="Enter Optional Notes" value="<?php echo $contact->notes;?>" ><?php echo $contact->notes;?></textarea>
                                                     </label>
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="id" value="<?php echo $contact->id; ?>" />
                                             <input type="submit" name="submit" class="add-btn button right small" value="Submit">
                                         </form>
                                         <button class="close-button" data-close aria-label="Close modal" type="button">
