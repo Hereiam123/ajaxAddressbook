@@ -100,7 +100,7 @@ $contacts=$db->resultset();
                                                 <div class="large-4 columns">
                                                     <label>State
                                                         <select name="state">
-                                                            <option disabled selected>Select State</option>
+                                                            <option>Select State</option>
                                                             <?php foreach($states as $key=>$value): ?>
                                                                 <option value="<?php echo $key;?>" <?php if($contact->state==$value){echo 'selected';}?>><?php echo $value; ?></option>
                                                             <?php endforeach; ?>
@@ -129,7 +129,12 @@ $contacts=$db->resultset();
                                     </div>
                                 </li>
 
-                                <li><a href="#" class="button tiny alert">Delete</a></li>
+                                <li>
+                                    <form id="deleteContact" action="#" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $contact->id; ?>" />
+                                        <p><input type="submit" class="delete-btn button tiny secondary alert" value="Delete" /></p>
+                                    </form>
+                                </li>
                             </ul>
                         </td>
                     </tr>

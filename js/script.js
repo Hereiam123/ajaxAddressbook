@@ -37,20 +37,18 @@ $(document).ready(function(){
     });
 
     //Delete Contact
-    $(document).on('submit','#editContact', function(){
+    $(document).on('submit','#deleteContact', function(){
         //Show Loader Image
         $('#loaderImage').show();
 
         //Post data from form
-        $.post("edit_contact.php", $(this).serialize())
+        $.post("delete_contact.php", $(this).serialize())
             .done(function(data){
                 console.log(data);
-                $('.editModal').foundation('close');
                 showContacts();
             });
         return false;
     });
-
 });
 
 //Show Contacts
